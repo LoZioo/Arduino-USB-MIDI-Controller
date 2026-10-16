@@ -85,7 +85,7 @@ void loop(){
 		if(reading != committed_state){
 			committed_state = reading;
 
-			if(committed_state == LOW){
+			if(committed_state == HIGH){
 				toggle = !toggle;
 				digitalWrite(LED_BUILTIN, toggle ? HIGH : LOW);
 				midi_control_change(0, 20, toggle * MIDI_CC_ON);
